@@ -14,7 +14,7 @@ lazy val commonSettings = Seq(
 )
 
 lazy val root = (project in file("."))
-  .aggregate(lombok)
+  .aggregate(lombok, logging)
   .settings(
     name := "paradise-study"
   )
@@ -23,4 +23,8 @@ lazy val lombok = (project in file("lombok"))
   .settings(commonSettings)
   .settings(
   )
+
+lazy val logging = (project in file("logging"))
+  .settings(commonSettings)
+  .settings()
 

@@ -1,4 +1,5 @@
 package lombok
+
 import scala.reflect.macros.blackbox
 import scala.language.experimental.macros
 import scala.annotation.StaticAnnotation
