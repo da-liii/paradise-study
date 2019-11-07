@@ -1,16 +1,17 @@
 transitiveClassifiers in Global := Seq(Artifact.SourceClassifier)
 
-scalaVersion in ThisBuild := "2.12.8"
+scalaVersion in ThisBuild := "2.13.1"
 
 val paradiseVersion = "2.1.0"
-val scalatestVersion = "3.0.5"
+val scalatestVersion = "3.0.8"
 
 lazy val commonSettings = Seq(
   libraryDependencies ++= Seq(
     "org.scala-lang" % "scala-reflect" % scalaVersion.value,
     "org.scalatest" %% "scalatest" % scalatestVersion % "test"
   ),
-  addCompilerPlugin("org.scalamacros" % "paradise" % paradiseVersion cross CrossVersion.full),
+  scalacOptions ++= Seq("-deprecation", "-Ymacro-annotations")
+  // addCompilerPlugin("org.scalamacros" % "paradise" % paradiseVersion cross CrossVersion.full),
 )
 
 lazy val root = (project in file("."))
