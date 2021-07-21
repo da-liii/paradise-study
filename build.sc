@@ -1,12 +1,12 @@
 import mill._, scalalib._
 
 object logging extends ScalaModule {
-  def scalaVersion = "2.13.1"
+  def scalaVersion = "2.13.6"
 
   def scalacOptions = Seq("-deprecation", "-Ymacro-annotations")
 
   def ivyDeps = Agg(
-    ivy"org.scala-lang:scala-reflect:2.13.1",
+    ivy"org.scala-lang:scala-reflect:${scalaVersion}",
     ivy"org.slf4j:slf4j-api:1.7.32",
   )
 
@@ -19,12 +19,12 @@ object logging extends ScalaModule {
 }
 
 object lombok extends ScalaModule {
-  def scalaVersion = "2.13.1"
+  def scalaVersion = "2.13.6"
 
   def scalacOptions = Seq("-deprecation", "-Ymacro-annotations")
 
   def ivyDeps = Agg(
-    ivy"org.scala-lang:scala-reflect:2.13.1",
+    ivy"org.scala-lang:scala-reflect:2.13.6",
   )
 
   object test extends Tests with TestModule.ScalaTest {
