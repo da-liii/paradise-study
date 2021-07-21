@@ -10,3 +10,4 @@ target/
 .ensime
 .ensime_cache
 *.log
+out/
